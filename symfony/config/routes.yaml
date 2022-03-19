@@ -1,0 +1,32 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+api_login_check:
+    path: /api/authCheck
+
+api_user_register:
+    path: /api/users/register
+    controller: App\Controller\UserController::register
+    methods: ['POST']
+api_user_logout:
+    path: /api/users/logout
+    controller: App\Controller\UserController::logout
+    methods: ['POST']
+
+api_car_add:
+    path: /api/cars
+    controller: App\Controller\CarController::add
+    methods: ['POST']
+
+api_car_list:
+    path: /api/cars
+    controller: App\Controller\CarController::list
+    methods: ['GET']
+
+api_car_add_comment:
+    path: /api/cars/{id}/comment
+    controller: App\Controller\CarController::addComment
+    methods: ['POST']
+    requirements:
+        id: '\d+'
